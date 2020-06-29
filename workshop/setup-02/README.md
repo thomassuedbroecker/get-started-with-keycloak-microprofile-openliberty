@@ -14,7 +14,7 @@ MicroProfile uses the file `microprofile-config.properties` to get the location 
 ### Overview of the classes
 
 * `AuthorsApplication` class represents our RESTful application and is configured to use logon with JWT.
-* `GetAuthor` class represents the REST API which is protected JWT security, defined by a specific role.
+* `GetAuthor` class represents the REST API Endpoint, which is protected JWT security, defined by a specific role.
 * `Author` class represents the data structure we use for the Author and is also used in the test.
 * `HealthEndpoint`class is responsible for Kubernetes provides liveness and readiness probes, when we would deploy the microservice to Kubernetes.
 
