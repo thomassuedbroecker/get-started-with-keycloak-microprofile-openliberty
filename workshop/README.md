@@ -14,7 +14,7 @@ The Microservice runs on [OpenLiberty](https://openliberty.io/) and uses [MicroP
 
 ### Architecture
 
-The `Authors` Microservice application supports a protected logon with a JWT and the specific REST call `getAuthors` is protected by a specific user role. The image below contains a simplified architecture overview of the example which runs on the local machine, here you see:
+The `Authors` Microservice application supports a protected login with a JWT and the specific REST call `getAuthors` is protected by a specific user role. The image below contains a simplified architecture overview of the example which runs on the local machine, here you see:
 
 * The `JUnit` test and Authors Microservice are running on a `OpenLiberty` server
 * The needed `JWT` Key is saved on the OpenLiberty server in a MicroProfile configuration
@@ -59,7 +59,7 @@ A very simplified overview of the test execution to access `Authors` Microservic
   We need to ...
 
     1. ... configure the `server.xml` of OpenLiberty
-    2. ... add logon and security functionality to the `AuthorsApplication` class
+    2. ... add login and security functionality to the `AuthorsApplication` class
     3. ... secure the REST Endpoint in the `GetAuthor`class
 
 * [**JUnit test**](https://junit.org/junit5/)
