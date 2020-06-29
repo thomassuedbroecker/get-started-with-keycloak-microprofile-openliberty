@@ -1,0 +1,129 @@
+# Setup Author microservice on OpenLiberty
+
+### Overview
+
+We need to verify following classes to setup MicroProfile 
+
+* `AuthorsApplication` class
+* `GetAuthor` class
+* `server.xml` for the OpenLiberty server
+
+We have to insert the public RS256 signed JWT Key from Keycloak  in following file `src/main/webapp/META-INF/keycloak-public-key.pem`.
+MicroProfile uses the file `microprofile-config.properties` to get the location of the key information.
+
+### Overview of the classes
+
+* `AuthorsApplication` class represents our web application and is configured to use logon with JWT.
+* `GetAuthor` class represents the REST API which is protected JWT security, defined by a specific role.
+* `Author` class represents the data structure we use for the Author and is also used in the test.
+* `HealthEndpoint`class is responsible for Kubernetes provides liveness and readiness probes, when we would deploy the microservice to Kubernetes.
+
+The simplified classdiagram shows an overview of classes of our project, for the microservice and the JUnit test.
+
+![](../../images/uml-classes.png)
+
+---
+
+### Step 1: Verify the modifications in the Authors microservice
+
+With `org.eclipse.microprofile.auth.LoginConfig` and `@LoginConfig(authMethod = "MP-JWT")` we add the JWT authenication to the application and with [`javax.annotation.security.DeclareRoles`](https://docs.oracle.com/cd/E19798-01/821-1841/gjgcq/index.html) and @DeclareRoles({"authors-role-cloud-native-starter"}) we define the roles, which can be used in the microservice application to enable protection.
+
+* `AuthorsApplication` class
+
+```java
+// Keycloak and security
+import org.eclipse.microprofile.auth.LoginConfig;
+import javax.annotation.security.DeclareRoles;
+
+@LoginConfig(authMethod = "MP-JWT")
+@DeclareRoles({"authors-role-cloud-native-starter"})
+```
+
+* `GetAuthor` class
+
+In that class we protect the invocation of the REST Endpoint with the role `@RolesAllowed({"authors-role-cloud-native-starter"})` and we show the content of the JWT content later.
+
+```java
+// Security with keycloak and MicroProfile "Java Web Token"
+import javax.annotation.security.RolesAllowed;
+import org.eclipse.microprofile.jwt.JsonWebToken;
+import javax.inject.Inject;
+
+....
+
+	@Inject private JsonWebToken tokenInformation;
+	// usage of microprofile-config.properties file in src/main/resources/META-INF
+	private String message;
+    @RolesAllowed({"authors-role-cloud-native-starter"})
+  
+....
+  
+  if (tokenInformation != null){
+				System.out.println("... [Author] MP JWT config message: " + message );
+				System.out.println("... [Author] MP JWT getIssuedAtTime " + tokenInformation.getIssuedAtTime() );
+				System.out.println("... [Author] getIssuer: " + tokenInformation.getIssuer());
+				System.out.println("... [Author] getRawToken: " + tokenInformation.getRawToken());
+				System.out.println("... [Author] getTokenID: " + tokenInformation.getTokenID());
+	}
+```
+
+---
+
+### Step 2: Modification of the Liberty `server.xml`
+
+We define the sources for the JWT.
+We need to ensure that we find the values for the issuer, audiences, userNameAttribute our JWT. Below is an extract to the JWT content and a the table with the mapping:
+
+|  JWT | OpenLiberty server.xml  |
+| - | - |
+| iss | issuer |
+| aud | audiences |
+| preferred_username | userNameAttribute |
+
+```json
+  "iss": "http://localhost:8282/auth/realms/cloudnativestarter", (issuer)
+  "aud": "account", (audiences)
+  "preferred_username": "author-cloud-native-starter" (userNameAttribute)
+```
+
+The issuer, audiences, userNameAttribute must be mapped to your server.xml file. [Here you find the definitions](https://openliberty.io/docs/ref/config/mpJwt.html) OpenLiberty expects in a JWT.
+
+This is an extract of the `server.xml` for our OpenLiberty server:
+
+```xml
+  <mpJwt
+     id="myMpJwt"
+     jwksUri="http://localhost:8282/auth/cloudnativestarter/public/protocol/openid-connect/certs"
+     issuer="http://localhost:8282/cloudnativestarter/realms/public"
+     userNameAttribute="preferred_username"
+     audiences="account">
+  </mpJwt>
+```
+
+### Step 3: Insert the RS256 JWT key in the file `keycloak-public-key.pem` 
+
+The file is saved in that folder `src/main/webapp/META-INF/keycloak-public-key.pem`.
+
+-----BEGIN PUBLIC KEY-----
+YOUR_KEY
+-----END PUBLIC KEY-----
+
+We get the key by using the URL `http://localhost:8282/auth/admin/master/console/#/realms/cloudnativestarter/keys` and then we press _public key_ The following image shows the invocation.
+
+![](../../images/liberty-setup-01.png)
+
+### Step 4: Verify the `microprofile-config.properties`file content 
+
+MicroProfile uses a file to locate the `publickey.location` information resource and the `issuer` URL. The file `microprofile-config.properties` is located is here: `src/main/webapp/META-INF/microprofile-config.properties`.
+
+```
+mp.jwt.verify.publickey.location=/META-INF/keycloak-cloudnativestarter-key.pem
+mp.jwt.verify.issuer=http://localhost:8282/auth/realms/cloudnativestarter
+```
+
+---
+
+### Step 3: Modifications in the pom.xml
+
+No additional change made. 
+Usage of the pom.xml for the JUnit test.
