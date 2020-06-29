@@ -1,4 +1,4 @@
-# Setup Author microservice on OpenLiberty
+# Setup Author Microservice on OpenLiberty
 
 ### Overview
 
@@ -16,17 +16,17 @@ MicroProfile uses the file `microprofile-config.properties` to get the location 
 * `AuthorsApplication` class represents our RESTful application and is configured to use logon with JWT.
 * `GetAuthor` class represents the REST API Endpoint, which is protected JWT security, defined by a specific role.
 * `Author` class represents the data structure we use for the Author and is also used in the test.
-* `HealthEndpoint`class is responsible for Kubernetes provides liveness and readiness probes, when we would deploy the microservice to Kubernetes.
+* `HealthEndpoint`class is responsible for Kubernetes provides liveness and readiness probes, when we would deploy the Microservice to Kubernetes.
 
-The simplified classdiagram shows an overview of classes of our project, for the microservice and the JUnit test.
+The simplified classdiagram shows an overview of classes of our project, for the Microservice and the JUnit test.
 
 ![](../../images/uml-classes.png)
 
 ---
 
-### Step 1: Verify the modifications in the Authors microservice
+### Step 1: Verify the modifications in the Authors Microservice
 
-With `org.eclipse.microprofile.auth.LoginConfig` and `@LoginConfig(authMethod = "MP-JWT")` we add the JWT authenication to the application and with [`javax.annotation.security.DeclareRoles`](https://docs.oracle.com/cd/E19798-01/821-1841/gjgcq/index.html) and @DeclareRoles({"authors-role-cloud-native-starter"}) we define the roles, which can be used in the microservice application to enable protection.
+With `org.eclipse.microprofile.auth.LoginConfig` and `@LoginConfig(authMethod = "MP-JWT")` we add the JWT authenication to the application and with [`javax.annotation.security.DeclareRoles`](https://docs.oracle.com/cd/E19798-01/821-1841/gjgcq/index.html) and @DeclareRoles({"authors-role-cloud-native-starter"}) we define the roles, which can be used in the Microservice application to enable protection.
 
 * `AuthorsApplication` class
 
@@ -71,7 +71,7 @@ import javax.inject.Inject;
 
 ### Step 2: Modification of the Liberty `server.xml`
 
-We define the sources for the JWT.
+We define the configuration for the JWT.
 We need to ensure that we find the values for the issuer, audiences, userNameAttribute our JWT. Below is an extract to the JWT content and a the table with the mapping:
 
 |  JWT | OpenLiberty server.xml  |

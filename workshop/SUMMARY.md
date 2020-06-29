@@ -10,7 +10,7 @@
 * [Step 2 - Understand and configure the Authors microserice on OpenLiberty](setup-02/README.md)
 * [Step 3 - Understand the JUnit test implementation](setup-03/README.md)
 
-### Start the microservice and execute the test
+### Start the Microservice and execute the test
 
 * [Step 1 - Start the OpenLiberty server and execute the JUnit test](execution/README.md)
 * [(Optional) Extract the JWT from a bearer token](additional/README.md)

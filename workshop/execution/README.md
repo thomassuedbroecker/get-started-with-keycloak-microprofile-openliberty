@@ -1,4 +1,4 @@
-# Start the microservice and execute the test
+# Start the Microservice and execute the test
 
 ### STEP 1: 
 
@@ -26,12 +26,12 @@ $ [INFO] CWWKM2015I: Match number: 1 is [29/06/2020, 09:06:00:531 CEST] 00000038
 Here we see the relevant output in the terminal session.
 
 1. First we see that we get the bearer token from Keycloak (we can use that token to verify the content with a [JWT Decoder](http://jwt.io) on the web).
-2. Then we see that the bearer token content information also from the Authors microservice output.
-3. Now we see the return value of the Authors microservice is going to send.
+2. Then we see that the bearer token content information also from the Authors Microservice output.
+3. Now we see the return value of the Authors Microservice is going to send.
 4. Now JUnit test shows the value of the Authors response we going to compare with expected value in the test.
 5. As the last output we see JUnit test result.
 
-In the output `[JUNIT-TEST]` indicates outputs from the JUnit test and `[INFO] ... [Author]` indicates the outputs of the microservice Authors.
+In the output `[JUNIT-TEST]` indicates outputs from the JUnit test and `[INFO] ... [Author]` indicates the outputs of the Microservice Authors.
 
 ```sh
 [INFO] Running unit tests...
