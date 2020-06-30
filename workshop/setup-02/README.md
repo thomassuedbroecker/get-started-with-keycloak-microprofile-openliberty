@@ -2,7 +2,7 @@
 
 ### Overview
 
-We need to verify following relevant classes to for the usage of JWT with MicroProfile:
+We need to verify following the relevant classes to for the usage of JWT with MicroProfile:
 
 * `AuthorsApplication` class
 * `GetAuthor` class
