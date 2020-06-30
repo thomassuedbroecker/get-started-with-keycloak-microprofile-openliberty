@@ -26,6 +26,8 @@ The `Authors` Microservice application supports a protected login with JWT and t
 
 A very simplified overview of the test execution to access `Authors` Microservice using `Keycloak`, `OpenLiberty`, `MicroProfile` and `JWT` , is shown in the sequence diagram below.
 
+![](../images/uml-sequence-getAuthor.png)
+
   1. Start the `JUnit` test called `Test_GetAuthors`. The test invokes the private operation `getToken`.
   2. Request a bearer token from `Keycloak` using a REST Endpoint (http://localhost:8282/auth/realms/protocol/openid-connect/token). The request contains the needed Keycloak data for the authorization as a parameters to get the `bearer token`.That `bearer token` does contain the `Java Web Token`, which is protected with the `RS256 (RSA Signature with SHA-256)`. `RS256` is a [JWT](https://en.wikipedia.org/wiki/JSON_Web_Token) signing algorithm. 
   3. Proceeding with the test by invoking the private operation `getAuthorAuthorized`.
@@ -34,7 +36,6 @@ A very simplified overview of the test execution to access `Authors` Microservic
   6. Now the Endpoint validates, does the `JavaWebToken` contain the right role to access the information?
   7. Then the response data data will be compared with the expected value.
 
-![](../images/uml-sequence-getAuthor.png)
 
 ### Setup of the example an overview
 
