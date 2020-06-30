@@ -35,7 +35,7 @@ A very simplified overview of the test execution to access `Authors` Microservic
 
 ![](../images/uml-sequence-getAuthor.png)
 
-### Setup overview
+### Setup of the example an overview
 
 * [**Keycloak**](https://www.keycloak.org)
 
