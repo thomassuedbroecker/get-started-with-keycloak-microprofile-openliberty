@@ -109,7 +109,7 @@ public class Test_GetAuthors {
             System.out.println("[JUNIT-TEST] -> Get Author response has 'data': " + string_response);
             return string_response;
         } else {
-            return "No, data from author";
+            return "No data from author";
         }
     }
 
