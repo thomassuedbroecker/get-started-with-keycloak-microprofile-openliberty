@@ -38,7 +38,6 @@ import javax.inject.Inject;
 public class GetAuthor {
 	
 	@Inject private JsonWebToken tokenInformation;
-	// usage of microprofile-config.properties file in src/main/resources/META-INF
 	@RolesAllowed({"authors-role-cloud-native-starter"})
 	@GET
 	@APIResponses(value = {

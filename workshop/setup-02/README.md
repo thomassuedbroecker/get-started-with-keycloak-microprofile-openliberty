@@ -50,9 +50,7 @@ import javax.inject.Inject;
 ....
 
 	@Inject private JsonWebToken tokenInformation;
-	// usage of microprofile-config.properties file in src/main/resources/META-INF
-	private String message;
-    @RolesAllowed({"authors-role-cloud-native-starter"})
+  @RolesAllowed({"authors-role-cloud-native-starter"})
   
 ....
   
