@@ -4,8 +4,8 @@
 
 We need to verify following the relevant classes to for the usage of JWT with MicroProfile:
 
-* `AuthorsApplication` class
-* `GetAuthor` class
+* `AuthorsApplication` Java class
+* `GetAuthor` Java class
 * `server.xml` for the OpenLiberty server
 
 We have to insert the public RS256 signed JWT Key from Keycloak  in following file `src/main/webapp/META-INF/keycloak-public-key.pem`.
@@ -31,7 +31,6 @@ With [`org.eclipse.microprofile.auth.LoginConfig`](https://www.eclipse.org/commu
 * `AuthorsApplication` class
 
 ```java
-// Keycloak and security
 import org.eclipse.microprofile.auth.LoginConfig;
 import javax.annotation.security.DeclareRoles;
 
@@ -44,7 +43,6 @@ import javax.annotation.security.DeclareRoles;
 In that class we protect the invocation of the REST Endpoint with the role `@RolesAllowed({"authors-role-cloud-native-starter"})` and we show the content of the JWT content later.
 
 ```java
-// Security with keycloak and MicroProfile "Java Web Token"
 import javax.annotation.security.RolesAllowed;
 import org.eclipse.microprofile.jwt.JsonWebToken;
 import javax.inject.Inject;

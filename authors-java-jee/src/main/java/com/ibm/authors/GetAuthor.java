@@ -27,7 +27,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 
-// Security with keycloak and MicroProfile "Java Web Token"
+
 import javax.annotation.security.RolesAllowed;
 import org.eclipse.microprofile.jwt.JsonWebToken;
 import javax.inject.Inject;

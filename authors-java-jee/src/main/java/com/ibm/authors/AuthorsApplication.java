@@ -4,7 +4,6 @@ package com.ibm.authors;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.ApplicationPath;
 
-// Keycloak and security
 import org.eclipse.microprofile.auth.LoginConfig;
 import javax.annotation.security.DeclareRoles;
 
