@@ -17,7 +17,8 @@ The Microservice runs on [OpenLiberty](https://openliberty.io/) and uses [MicroP
 The `Authors` Microservice application supports a protected login with a JWT and the specific REST call `getAuthors` is protected by a specific user role. The image below contains a simplified architecture overview of the example which runs on the local machine, here you see:
 
 * The `JUnit` test and Authors Microservice are running on a `OpenLiberty` server
-* The needed `JWT` Key is saved on the OpenLiberty server in the `Authors` using a Microservice  [MicroProfile configuration](https://www.eclipse.org/community/eclipse_newsletter/2017/september/article3.php)
+* The `Authors` Microservice is build with MicroProfile
+* The needed `JWT` Key is saved on the OpenLiberty server in the `Authors` Microservice using [MicroProfile configuration](https://www.eclipse.org/community/eclipse_newsletter/2017/september/article3.php)
 * The `JUnit` test requests a `bearer token` to access the `Authors` service
 * The major configuration information inside `Keycloak`
 
