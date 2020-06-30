@@ -29,7 +29,7 @@ A very simplified overview of the test execution to access `Authors` Microservic
   2. Request a bearer token from `Keycloak` using a REST Endpoint (http://localhost:8282/auth/realms/protocol/openid-connect/token). The request contains the needed Keycloak data for the authorization as a parameters to get the `bearer token`.That `bearer token` does contain the `Java Web Token`, which is protected with the `RS256 (RSA Signature with SHA-256)`. `RS256` is a [JWT](https://en.wikipedia.org/wiki/JSON_Web_Token) signing algorithm. 
   3. Proceeding with the test by invoking the private operation `getAuthorAuthorized`.
   4. Now the `Authors` REST Endpoint (http://localhost:3000/api/v1/getAuthor) is invoked using the bearer token we got from Keycloak, which contains the [JWT](https://en.wikipedia.org/wiki/JSON_Web_Token).
-  5. Verifing the JWT by the `Authors` Microservice application, that will be done automaticly, by using the given `RS256 signed JWT Key` on the `OpenLiberty` server. When the provided Key is validated, the JWT can be used to access the REST Endpoint of the Microservice.
+  5. Verifying the JWT by the `Authors` Microservice application, that will be done automaticly, by using the given `RS256 signed Key` for the JWT in our Microservice application on the `OpenLiberty` server. When the provided Key is validated, the JWT can be used to access the REST Endpoint of the Microservice.
   6. Now the Endpoint validates, does the `JavaWebToken contain the right role to access the information?
   7. Then the response data data will be compared with the expected value.
 

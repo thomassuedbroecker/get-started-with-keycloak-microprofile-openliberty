@@ -1,8 +1,8 @@
-# Setup Author Microservice on OpenLiberty
+# Setup Authors Microservice on OpenLiberty
 
 ### Overview
 
-We need to verify following classes to setup MicroProfile 
+We need to verify following classes to for the usage of MicroProfile:
 
 * `AuthorsApplication` class
 * `GetAuthor` class
@@ -26,7 +26,7 @@ The simplified classdiagram shows an overview of classes of our project, for the
 
 ### Step 1: Verify the modifications in the Authors Microservice
 
-With `org.eclipse.microprofile.auth.LoginConfig` and `@LoginConfig(authMethod = "MP-JWT")` we add the JWT authenication to the application and with [`javax.annotation.security.DeclareRoles`](https://docs.oracle.com/cd/E19798-01/821-1841/gjgcq/index.html) and @DeclareRoles({"authors-role-cloud-native-starter"}) we define the roles, which can be used in the Microservice application to enable protection.
+With `org.eclipse.microprofile.auth.LoginConfig` and `@LoginConfig(authMethod = "MP-JWT")` we add the JWT authenication to the RESTful application and with [`javax.annotation.security.DeclareRoles`](https://docs.oracle.com/cd/E19798-01/821-1841/gjgcq/index.html) and @DeclareRoles({"authors-role-cloud-native-starter"}) we define the roles, which can be used in the Microservice application to enable protection.
 
 * `AuthorsApplication` class
 
