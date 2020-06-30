@@ -5,7 +5,7 @@
 The objective of this project is to provide a _"simple"_ example to access a Java Microservice using the [_Open Source Identity and Access Management_ Keycloak](https://www.keycloak.org) and [JavaWebToken (JWT)](https://jwt.io).
 
 We want to ...
-  * ... secure the Microservice application with a login
+  * ... secure the Microservice with a login
   * ... secure a specific REST Endpoint invocation of the Microservice with a role
   * ... test the access to the Microservice with a [JUnit](https://junit.org/junit5/) test.
 
