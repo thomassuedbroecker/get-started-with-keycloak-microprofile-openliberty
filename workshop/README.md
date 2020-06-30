@@ -11,6 +11,9 @@ We want to ...
 
 The Microservice runs on [OpenLiberty](https://openliberty.io/) and uses [MicroProfile](https://microprofile.io/). The example Microservice is called `Authors` and is from the open sourced [Cloud Native Starter project](https://github.com/IBM/cloud-native-starter).
 
+Here is a 7 minutes YouTube about the setup of the example.
+
+[![You Tube Setup](https://img.youtube.com/vi/fP1_3MkhqG0/0.jpg)](https://www.youtube.com/watch?fP1_3MkhqG0 "Click play on youtube")
 
 ### Architecture
 
