@@ -10,7 +10,7 @@ The simplified classdiagram shows an overview of classes of our project for the 
 
 * `Test_GetAuthors` class implemments the test.
 * `AuthorJsonbAdapter` class implemets the `JSON-B` adapter to convert `Author` objects to `JSON` format.
-* `KeycloakAuthRequestFilter` implements [`ClientRequestFilter`](https://docs.oracle.com/javaee/7/api/javax/ws/rs/client/ClientRequestFilter.html) to simply the creation of the REST client to access the Authors Microservice.
+* `KeycloakAuthRequestFilter` implements [`ClientRequestFilter`](https://docs.oracle.com/javaee/7/api/javax/ws/rs/client/ClientRequestFilter.html) to simplify the creation of the REST client to access the Authors Microservice.
 
 ![](../../images/uml-classes.png)
 
