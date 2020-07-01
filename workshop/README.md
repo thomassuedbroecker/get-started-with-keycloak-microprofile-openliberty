@@ -13,7 +13,7 @@ The Microservice runs on [OpenLiberty](https://openliberty.io/) and uses [MicroP
 
 Here is a 7 minutes [YouTube video](https://youtu.be/fP1_3MkhqG0) about the setup of the example.
 
-[![You Tube Setup](https://img.youtube.com/vi/fP1_3MkhqG0/0.jpg)](https://www.youtube.com/watch?fP1_3MkhqG0 "Click play on youtube")
+[![You Tube Setup](https://img.youtube.com/vi/fP1_3MkhqG0/0.jpg)](https://www.youtube.com/watch?fP1_3MkhqG0)
 
 ### Architecture
 
