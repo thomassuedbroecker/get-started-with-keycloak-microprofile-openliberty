@@ -2,6 +2,10 @@
 
 In this part we will setup Keycloak. We will run a local Keycloak Docker container and reuse an existing realm configuration.
 
+The image below shows the relevant elements we will use later.
+
+![](../../images/keycloak-content.png)
+
 ---
 
 ### Step 1: Start Keycloak Docker image local
