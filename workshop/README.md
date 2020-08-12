@@ -5,11 +5,11 @@
 The objective of this project is to provide a _"simple"_ example to access a Java Microservice using the [_Open Source Identity and Access Management_ Keycloak](https://www.keycloak.org) and [JavaWebToken (JWT)](https://jwt.io).
 
 We want to ...
-  * ... secure the Microservice with a login
-  * ... secure a specific REST Endpoint invocation of the Microservice with a role
+  * ... secure the Microservice with [Authentication](https://en.wikipedia.org/wiki/Authentication)
+  * ... secure a specific REST Endpoint invocation of the Microservice with [Authorization](https://en.wikipedia.org/wiki/Authorization)
   * ... test the access to the Microservice with a [JUnit](https://junit.org/junit5/) test.
 
-The Microservice runs on [OpenLiberty](https://openliberty.io/) and uses [MicroProfile](https://microprofile.io/). The example Microservice is called `Authors` and is from the open sourced [Cloud Native Starter project](https://github.com/IBM/cloud-native-starter).
+The Microservice runs on [OpenLiberty](https://openliberty.io/) and uses [MicroProfile](https://microprofile.io/). The example Microservice is called `Authors` and is from the open sourced [Cloud Native Starter project](https://github.com/IBM/cloud-native-starter).The example doesn't use a frontend UI for the Authentication. The JUnit test will authenticate with the Keycloak REST API.
 
 Here is a 7 minutes [YouTube video](https://youtu.be/fP1_3MkhqG0) about the setup of the example.
 
