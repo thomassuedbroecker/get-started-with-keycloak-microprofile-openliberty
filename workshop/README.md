@@ -27,6 +27,8 @@ The `Authors` Microservice application supports a protected login with JWT and t
 
 ![](../images/architecture.png)
 
+_Note:_ In this example **Keycloak** server is available on **localhost:8282** and Authors Microservice on **OpenLiberty** runs on **localhost:3000**.
+
 A very simplified overview of the test execution to access `Authors` Microservice using `Keycloak`, `OpenLiberty`, `MicroProfile` and `JWT` , is shown in the sequence diagram below.
 
 ![](../images/uml-sequence-getAuthor.png)

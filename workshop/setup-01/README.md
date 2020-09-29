@@ -15,7 +15,13 @@ $ docker run -it -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8282:8080 
 ```
 ### Step 2: Import the existing realm configuration
 
-1. Open the Keycloak in a browser `http://localhost:8282/` select the Administration Console
+1. Open the Keycloak in a browser select the Administration Console
+
+Use following URL:
+
+```sh
+http://localhost:8282/
+```
 
 ![](../../images/keycloak-setup-01.png)
 
@@ -37,7 +43,7 @@ $ docker run -it -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8282:8080 
 
 ![](../../images/keycloak-setup-05.png)
 
-### Step 3: Verify the imported realm `cloudnativestarter`
+### (Optional) Step 3: Verify the imported realm `cloudnativestarter`
 
 #### (Optional) Realm 
 
