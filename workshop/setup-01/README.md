@@ -10,6 +10,8 @@ The image below shows the relevant elements we will use later.
 
 ### Step 1: Start Keycloak Docker image local
 
+Open a terminal session and enter:
+
 ```sh
 $ docker run -it -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8282:8080 jboss/keycloak:9.0.2
 ```
