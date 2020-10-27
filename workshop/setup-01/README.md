@@ -45,7 +45,11 @@ http://localhost:8282/
 
 ![](../../images/keycloak-setup-03.png)
 
-4. Select existing [`realm`](https://en.wikipedia.org/wiki/Realm) configuration from folder `/keycloak-realm-exports/cloud-native-starter-author-local-realm-export.json`
+4. Select existing [`realm`](https://en.wikipedia.org/wiki/Realm) configuration from folder [`/keycloak-realm-exports/cloud-native-starter-author-local-realm-export.json`](https://github.com/thomassuedbroecker/get-started-with-keycloak-microprofile-openliberty/tree/master/keycloak-realm-exports)
+ 
+```sh
+cd $ROOT_FOLDER/keycloak-realm-exports
+```
 
 ![](../../images/keycloak-setup-04.png)
 
