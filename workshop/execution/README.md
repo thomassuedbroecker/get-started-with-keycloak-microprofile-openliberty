@@ -9,14 +9,14 @@ Reminder: Setup, configure and run the `Keycloak server` [here](../setup-01/READ
 Open a terminal in the GitHub project folder. Start the OpenLiberty server in the devepment mode `liberty:dev`.
 
 ```sh
-cd authors-java-jee
+cd $ROOT_FOLDER/authors-java-jee
 mvn clean
 mvn liberty:dev
 ```
 
 ### STEP 3: Run the JUnit test
 
-Run the JUnit test, by just pressing return button in the terminal console.
+Run the JUnit test by just pressing return button in the terminal session.
 
 ```sh
 [INFO] CWWKM2015I: Match number: 1 is [29/06/2020, 09:06:00:531 CEST] 00000038 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The authorsDevJUnitServer server is ready to run a smarter planet. The authorsDevJUnitServer server started in 9.951 seconds..
