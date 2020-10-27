@@ -1,25 +1,25 @@
 # Start the Microservice and execute the test
 
-### STEP 1: 
+### STEP 1: Setup, configure and run the `Keycloak server`
 
-Reminder: Setup, configure and run the `Keycloak server` [here](../../setup-01/README.md).
+Reminder: Setup, configure and run the `Keycloak server` [here](../setup-01/README.md).
 
-### STEP 2:
+### STEP 2: Start the OpenLiberty server in the devepment mode 
 
 Open a terminal in the GitHub project folder. Start the OpenLiberty server in the devepment mode `liberty:dev`.
 
 ```sh
-$ cd authors-java-jee
-$ mvn clean
-$ mvn liberty:dev
+cd authors-java-jee
+mvn clean
+mvn liberty:dev
 ```
 
-### STEP 3:
+### STEP 3: Run the JUnit test
 
 Run the JUnit test, by just pressing return button in the terminal console.
 
 ```sh
-$ [INFO] CWWKM2015I: Match number: 1 is [29/06/2020, 09:06:00:531 CEST] 00000038 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The authorsDevJUnitServer server is ready to run a smarter planet. The authorsDevJUnitServer server started in 9.951 seconds..
+[INFO] CWWKM2015I: Match number: 1 is [29/06/2020, 09:06:00:531 CEST] 00000038 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The authorsDevJUnitServer server is ready to run a smarter planet. The authorsDevJUnitServer server started in 9.951 seconds..
 [INFO] Press the Enter key to run tests on demand.
 ```
 
@@ -67,7 +67,7 @@ In the output `[JUNIT-TEST]` indicates outputs from the JUnit test and `[INFO] .
 [INFO] Press the Enter key to run tests on demand.
 ```
 
-### STEP 4 (optional):
+### STEP 4 (optional): Open test report
 
 We can open the test report which is created by Maven inside the project.
 The image below shows, how to locate the file `junit-surefire-test-result` of the test report and open the report in a browser.

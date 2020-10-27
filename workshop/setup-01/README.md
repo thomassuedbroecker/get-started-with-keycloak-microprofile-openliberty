@@ -8,12 +8,20 @@ The image below shows the relevant elements we will use later.
 
 ---
 
-### Step 1: Start Keycloak Docker image local
+### Step 1: Clone the project to your local machine
+
+```sh
+git clone https://github.com/thomassuedbroecker/get-started-with-keycloak-microprofile-openliberty.git
+cd get-started-with-keycloak-microprofile-openliberty
+ROOT_FOLDER=$(pwd)
+```
+
+### Step 2: Start Keycloak Docker image local
 
 Open a terminal session and enter:
 
 ```sh
-$ docker run -it -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8282:8080 jboss/keycloak:9.0.2
+docker run -it -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8282:8080 jboss/keycloak:9.0.2
 ```
 ### Step 2: Import the existing realm configuration
 
@@ -89,7 +97,7 @@ The definition of the role `authors-role-cloud-native-starter` to the group `aut
 
 ![](../../images/keycloak-config-07.png)
 
-### Step 4: Add a user
+### Step 5: Add a user
 
 #### 1. Set Username: `author-cloud-native-starter`
  
@@ -107,7 +115,7 @@ The definition of the role `authors-role-cloud-native-starter` to the group `aut
 
 ![](../../images/keycloak-setup-10.png)
 
-### Step 5: Add user to Group
+### Step 6: Add user to Group
 
 Select in user _Author-cloud-native-starter_ the tab Groups and join in _Available Groups_
 the _authors-cloudnativestarter_.
