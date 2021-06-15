@@ -101,7 +101,7 @@ The definition of the role `authors-role-cloud-native-starter` to the group `aut
 
 ![](../../images/keycloak-config-07.png)
 
-### Step 5: Add a user
+### Step 5: **Add a user**
 
 #### 1. Set Username: `author-cloud-native-starter`
  
@@ -111,7 +111,7 @@ The definition of the role `authors-role-cloud-native-starter` to the group `aut
 
 ![](../../images/keycloak-setup-08.png)
 
-#### 3. Turn off _temporary_
+#### 3. **Turn off _temporary_**
 
 ![](../../images/keycloak-setup-09.png)
 
@@ -119,9 +119,9 @@ The definition of the role `authors-role-cloud-native-starter` to the group `aut
 
 ![](../../images/keycloak-setup-10.png)
 
-### Step 6: Add user to Group
+### Step 6: **Add user to group**
 
-Select in user _Author-cloud-native-starter_ the tab Groups and join in _Available Groups_
-the _authors-cloudnativestarter_.
+Select in user _Author-cloud-native-starter_ the tab `Groups` and join in `_Available Groups_`
+the `_authors-cloudnativestarter_` as you see in the image below.
 
 ![](../../images/keycloak-setup-11.png)

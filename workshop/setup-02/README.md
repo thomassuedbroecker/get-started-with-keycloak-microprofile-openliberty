@@ -24,7 +24,7 @@ The simplified classdiagram shows an overview of classes of our project, for the
 
 ---
 
-### Step 1: Verify the modifications in the Authors Microservice
+### Step 1: **Verify** the modifications in the Authors Microservice
 
 With [`org.eclipse.microprofile.auth.LoginConfig`](https://www.eclipse.org/community/eclipse_newsletter/2017/september/article3.php) and `@LoginConfig(authMethod = "MP-JWT")` we add the JWT authenication to the RESTful application and with [`javax.annotation.security.DeclareRoles`](https://docs.oracle.com/cd/E19798-01/821-1841/gjgcq/index.html) and @DeclareRoles({"authors-role-cloud-native-starter"}) we define the roles, which can be used in the Microservice application to enable protection.
 
@@ -65,10 +65,9 @@ import javax.inject.Inject;
 
 ---
 
-### Step 2: Modification of the Liberty `server.xml`
+### Step 2: **Verify** the modification of the Liberty `server.xml`
 
-We define the configuration for the JWT.
-We need to ensure that we find the values for the issuer, audiences, userNameAttribute our JWT. Below is an extract to the JWT content and a the table with the mapping:
+We define the configuration for the JWT. We need to ensure that we find the values for the issuer, audiences, userNameAttribute our JWT. Below is an extract to the JWT content and a the table with the mapping:
 
 |  JWT | OpenLiberty server.xml  |
 | - | - |
@@ -96,15 +95,27 @@ This is an extract of the `server.xml` for our OpenLiberty server:
   </mpJwt>
 ```
 
-### Step 3: Insert the RS256 JWT key in the file `keycloak-public-key.pem` 
+### Step 3: **Insert** the RS256 JWT key in the file `keycloak-public-key.pem` 
 
 The file is saved in that folder `src/main/webapp/META-INF/keycloak-public-key.pem`.
 
+```sh
 -----BEGIN PUBLIC KEY-----
 YOUR_KEY
 -----END PUBLIC KEY-----
+```
 
-We get the key by using the URL `http://localhost:8282/auth/admin/master/console/#/realms/cloudnativestarter/keys` and then we press _public key_ The following image shows the invocation.
+Your `src/main/webapp/META-INF/keycloak-public-key.pem` file should look like this:
+
+```sh
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtnBXdCRtOwh570rp56JBVl/+8KLNuaHbu/xOtzS87RhQ0I3sRC5UfW6Y3/8j2xkVJXTsIT0Zn3DdOr+sb+DtkCVaX/UC4LpJUYcDAIz7I2JjCrJhAbqmhr/nSgJ81+NVF99pW/SyynfG/eOixyc55p62NxsQs1l3rPbFRIWz00iIyFpPVHStYPJcDS749qPfz+N2H2yS2++JVbP3mTchb0tlISXU/j+SDMmUGFKzBTak3z+CBWlvhNlqGyUQM6SmklegUo9pdgq3fXyC2qK8/QG15QurAyezQ5gvU6p7LN8mPn/yZtbED8PBypYrk81E4N470wSuUGRbMM2KTNg4EQIDAQAB
+-----END PUBLIC KEY-----
+```
+
+We get the public key by using the URL `http://localhost:8282/auth/admin/master/console/#/realms/cloudnativestarter/keys` and then we press **_public key_**. Copy and past the content into the `src/main/webapp/META-INF/keycloak-public-key.pem` file.
+
+The following image shows the invocation.
 
 ![](../../images/liberty-setup-01.png)
 
